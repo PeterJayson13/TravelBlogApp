@@ -37,7 +37,7 @@ export default {
       this.loading = true;
 
       try {
-        const res = await axios.post('http://localhost:4000/users/login', {
+        const res = await axios.post('https://travelblogapp-kpka.onrender.com/users/login', {
           email: this.email,
           password: this.password
         });

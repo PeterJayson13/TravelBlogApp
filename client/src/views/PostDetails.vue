@@ -54,7 +54,7 @@ export default {
   methods: {
     async fetchPost() {
       try {
-        const res = await axios.get(`http://localhost:4000/posts/${this.$route.params.id}`);
+        const res = await axios.get(`https://travelblogapp-kpka.onrender.com/posts/${this.$route.params.id}`);
         this.post = res.data;
       } catch (err) {
         console.error('Error fetching post:', err);
@@ -63,7 +63,7 @@ export default {
     },
     async fetchComments() {
       try {
-        const res = await axios.get(`http://localhost:4000/comments/post/${this.$route.params.id}`);
+        const res = await axios.get(`https://travelblogapp-kpka.onrender.com/comments/post/${this.$route.params.id}`);
         this.comments = res.data;
       } catch (err) {
         console.error('Error fetching comments:', err);
@@ -73,7 +73,7 @@ export default {
     async submitComment() {
       try {
         await axios.post(
-          `http://localhost:4000/comments/post/${this.$route.params.id}`,
+          `https://travelblogapp-kpka.onrender.com/comments/post/${this.$route.params.id}`,
           { comment: this.newComment },
           {
             headers: {

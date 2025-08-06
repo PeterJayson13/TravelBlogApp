@@ -32,7 +32,7 @@ export default {
   methods: {
     async handleRegister() {
       try {
-        const res = await axios.post('http://localhost:4000/users/register', {
+        const res = await axios.post('https://travelblogapp-kpka.onrender.com/users/register', {
           username: this.username,
           email: this.email,
           password: this.password

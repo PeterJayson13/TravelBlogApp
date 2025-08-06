@@ -55,7 +55,7 @@ export default {
 
       try {
         const res = await axios.post(
-          'http://localhost:4000/posts',
+          'https://travelblogapp-kpka.onrender.com/posts',
           { title: this.title, content: this.content },
           {
             headers: {

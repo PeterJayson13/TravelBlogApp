@@ -44,7 +44,7 @@ export default {
   methods: {
     async fetchPost() {
       try {
-        const res = await axios.get(`http://localhost:4000/posts/${this.$route.params.id}`);
+        const res = await axios.get(`https://travelblogapp-kpka.onrender.com/posts/${this.$route.params.id}`);
         this.title = res.data.title;
         this.content = res.data.content;
         this.postLoaded = true;
@@ -56,7 +56,7 @@ export default {
     async submitUpdate() {
       try {
         await axios.patch(
-          `http://localhost:4000/posts/${this.$route.params.id}`,
+          `https://travelblogapp-kpka.onrender.com/posts/${this.$route.params.id}`,
           { title: this.title, content: this.content },
           {
             headers: {
@@ -77,7 +77,7 @@ export default {
 
       try {
         await axios.delete(
-          `http://localhost:4000/posts/${this.$route.params.id}`,
+          `https://travelblogapp-kpka.onrender.com/posts/${this.$route.params.id}`,
           {
             headers: {
               Authorization: `Bearer ${this.token}`

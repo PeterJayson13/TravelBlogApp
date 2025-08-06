@@ -57,7 +57,7 @@ export default {
   methods: {
     async fetchMyPosts() {
       try {
-        const res = await axios.get('http://localhost:4000/posts', {
+        const res = await axios.get('https://travelblogapp-kpka.onrender.com/posts', {
           headers: {
             Authorization: `Bearer ${this.token}`
           }
@@ -77,7 +77,7 @@ export default {
       if (!confirmDelete) return;
 
       try {
-        await axios.delete(`http://localhost:4000/posts/${id}`, {
+        await axios.delete(`https://travelblogapp-kpka.onrender.com/posts/${id}`, {
           headers: {
             Authorization: `Bearer ${this.token}`
           }

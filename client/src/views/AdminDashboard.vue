@@ -73,19 +73,19 @@ export default {
   methods: {
     async fetchAllPostsWithComments() {
       try {
-        const userRes = await axios.get('http://localhost:4000/users/details', {
+        const userRes = await axios.get('https://travelblogapp-kpka.onrender.com/users/details', {
           headers: { Authorization: `Bearer ${this.token}` }
         });
         this.userId = userRes.data._id;
 
-        const postRes = await axios.get('http://localhost:4000/posts', {
+        const postRes = await axios.get('https://travelblogapp-kpka.onrender.com/posts', {
           headers: { Authorization: `Bearer ${this.token}` }
         });
 
         const postsWithComments = await Promise.all(
           postRes.data.map(async post => {
             const commentRes = await axios.get(
-              `http://localhost:4000/comments/post/${post._id}`
+              `https://travelblogapp-kpka.onrender.com/comments/post/${post._id}`
             );
             return { ...post, comments: commentRes.data || [] };
           })
@@ -102,7 +102,7 @@ export default {
     async deletePost(postId) {
       if (!confirm('Are you sure you want to delete this post?')) return;
       try {
-        await axios.delete(`http://localhost:4000/posts/${postId}`, {
+        await axios.delete(`https://travelblogapp-kpka.onrender.com/posts/${postId}`, {
           headers: { Authorization: `Bearer ${this.token}` }
         });
         this.message = 'Post deleted.';
@@ -116,7 +116,7 @@ export default {
     async deleteComment(commentId) {
       if (!confirm('Delete this comment?')) return;
       try {
-        await axios.delete(`http://localhost:4000/comments/${commentId}`, {
+        await axios.delete(`https://travelblogapp-kpka.onrender.com/comments/${commentId}`, {
           headers: { Authorization: `Bearer ${this.token}` }
         });
         this.message = 'Comment deleted.';

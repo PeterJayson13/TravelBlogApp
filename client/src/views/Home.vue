@@ -38,7 +38,7 @@ export default {
   },
   async mounted() {
     try {
-      const res = await axios.get('http://localhost:4000/posts');
+      const res = await axios.get('https://travelblogapp-kpka.onrender.com/posts');
       this.posts = Array.isArray(res.data) ? res.data : res.data.posts || [];
     } catch (err) {
       console.error('Error fetching posts:', err);
