@@ -13,7 +13,7 @@ require('dotenv').config();
 const app = express();
 
 const corsOptions = {
-	origin:['http://localhost:8000', 'http://localhost:5173'],
+	origin:['https://travel-blog-app-bongabong.vercel.app'],
 	credentials: true, 
 	optionsSuccessStatus: 200
 };
